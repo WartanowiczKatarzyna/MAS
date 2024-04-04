@@ -10,3 +10,10 @@ pliki znajduja się w folderze JsonFiles w folderze z plikiem wykoywalnym
 * met. klasowa: np. showExtent w klasie PersonExtent (met. klasowa dla klasy Person, która znajduje sie w ekstensji) lub PersonExtent.ReadFromJsonFile()
 * przesłonięcie: np. ToString() w klasie Person
 * przeciążenie: np. PersonExtent.ReadFromJsonFile() i PersonExtent.ReadFromJsonFile(string name)
+
+MP2 - wymagania:
+
+* asocjacja zwykła
+* asocjacja z atrybutem
+* asocjacja kwalifikowana
+* kompozycja
