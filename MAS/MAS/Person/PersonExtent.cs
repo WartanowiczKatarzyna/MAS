@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace MAS.Person
@@ -21,14 +23,37 @@ namespace MAS.Person
             _persons.Remove(person);
         }
         
-        // metoda klasow klasy Person
+        // metoda klasowa klasy Person
         public void ShowExtent()
         {
-            Console.WriteLine($"Extent of the class Person:");
+            Console.WriteLine($"Extent of the class {this.ToString()}:");
             foreach (Person person in _persons)
             {
                 Console.WriteLine(person.ToString());
             }
+            Console.WriteLine();
+        }
+        public void WriteToJsonFile()
+        {
+            string jsonString = JsonSerializer.Serialize(_persons);
+            string projectRoot = Directory.GetCurrentDirectory();
+            string fileName = Path.Combine(projectRoot, "JsonFiles", "persons.json");
+            File.WriteAllText(fileName, jsonString);
+        }
+        public static PersonExtent ReadFromJsonFile(string file)
+        {
+            string projectRoot = Directory.GetCurrentDirectory();
+            string fileName = Path.Combine(projectRoot, "JsonFiles", $"{file}.json");
+            string jsonString = File.ReadAllText(fileName);
+            PersonExtent personExtent = new PersonExtent();
+            personExtent._persons = JsonSerializer.Deserialize<List<Person>>(jsonString);
+
+            return personExtent;
+        }
+        // metoda klasowa klasy PersonExtent
+        public static PersonExtent ReadFromJsonFile()
+        {
+            return ReadFromJsonFile("persons");
         }
     }
 }

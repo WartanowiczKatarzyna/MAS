@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="JsonFiles\**" />
+    <EmbeddedResource Remove="JsonFiles\**" />
+    <None Remove="JsonFiles\**" />
+  </ItemGroup>
+
 </Project>
