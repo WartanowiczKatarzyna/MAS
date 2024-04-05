@@ -10,17 +10,17 @@ namespace MAS.Person
 {
     public class Address
     {
-        public string Country { get; set; }
-        public string City { get; set; }
-        public string PostalCode { get; set; }
+        string Country { get; set; }
+        string City { get; set; }
+        string PostalCode { get; set; }
         
         // atrybut opcjonalny
-        public string? Street { get; set; }
+        string? Street { get; set; }
         
         // atrybut opcjonalny
-        public int? StreetNumber { get; set; }
+        int? StreetNumber { get; set; }
         
-        public string HouseNumber { get; set; }
+        string HouseNumber { get; set; }
 
         // atrybut pochodny
         [JsonIgnore]

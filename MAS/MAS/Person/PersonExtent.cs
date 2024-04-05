@@ -12,7 +12,7 @@ namespace MAS.Person
     public class PersonExtent
     {
         // atrybut powtarzalny, atrybut klasowy klasy Person
-        private ICollection<Person> _persons = new List<Person>();
+        private ICollection<Person> _persons = new HashSet<Person>();
 
         public void AddPerson(Person person)
         {
