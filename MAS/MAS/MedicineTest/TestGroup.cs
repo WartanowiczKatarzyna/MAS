@@ -10,18 +10,23 @@ namespace MAS.MedicineTest
     public class TestGroup
     {
         private Researcher _researcher;
-        public Researcher researcherResponsible { 
+        public Researcher ResearcherResponsible
+        {
             get { return _researcher; } 
             set {
-                if (value != null && value != _researcher)
+                if ( _researcher == null)
                 {
-                    _researcher.removeGroup(this);
                     _researcher = value;
-                    _researcher.addGroup(this);
+                } else if (value != null && value != _researcher)
+                {
+                    _researcher.RemoveGroup(this);
+                    _researcher = value;
+                    _researcher.AddGroup(this);
                 }
             } 
         }
 
+        public ICollection<ObservedParticipant> ObservedParticipants = new HashSet<ObservedParticipant>();
 
     }
 }

@@ -23,6 +23,14 @@ namespace MAS.Person
             Email = email;
             Address = address;
         }
+        public Person(Person person) 
+        {
+            Name = person.Name;
+            Surname = person.Surname;
+            PhoneNumber = person.PhoneNumber;
+            Email = person.Email;
+            Address = person.Address;
+        }
 
         public override string ToString() 
         { 

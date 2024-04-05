@@ -8,8 +8,7 @@ namespace MAS.Person
 {
     public class Employee : Person
     {
-        public Employee(string name, string surname, string phoneNumber, string email, Address address) : base(name, surname, phoneNumber, email, address)
-        {
-        }
+        public Employee(string name, string surname, string phoneNumber, string email, Address address) : base(name, surname, phoneNumber, email, address) { }
+        public Employee(Person person) : base(person) { }
     }
 }

@@ -13,7 +13,7 @@ pliki znajduja się w folderze JsonFiles w folderze z plikiem wykoywalnym
 
 MP2 - wymagania:
 
-* asocjacja zwykła
-* asocjacja z atrybutem
-* asocjacja kwalifikowana
+* asocjacja zwykła: Researcher - TestGroup, 1 do wielu
+* asocjacja z atrybutem: TestGroup - (ObservedParticipant) - Participant
+* asocjacja kwalifikowana: Researcher - Test, kwalifikator: Test.Medicine.Name
 * kompozycja
